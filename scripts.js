@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const gridSize = document.querySelector('#input');
 
 // let grid = document.createElement('div');
 // grid.textContent = 'This is the glorious text-content!';
@@ -8,12 +9,18 @@ const container = document.querySelector('.container');
 
 // Create Grid 
 function createGrid(rows, cols) {
-
+    const grid = gridSize.value ** 2;
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let grids = document.createElement("div");
-        // grids.innerText = (i + 1);
+        grids.style.backgroundColor = '#333333';
+
+        let squareHeightAndWidth = 600 / Number(gridSize.value)
+        grids.style.height = squareHeightAndWidth + 'px'
+        grids.style.width = squareHeightAndWidth + 'px'
+        grids.classList.add('square')
+
         container.appendChild(grids).className = "grid-item";
 
 
