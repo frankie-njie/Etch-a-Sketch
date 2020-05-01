@@ -18,9 +18,11 @@
     grid-gap: 0.1em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    height: 60%;
-    width: 80%;
-    margin: 10% 5%;
+    height: 600px;
+    width: 600px;
+    margin: 10% 15%;
+    overflow: hidden;
+    border: 1px solid;
 }
 
 .grid-item {
