@@ -14,11 +14,14 @@ function createGrid(rows, cols) {
         let grids = document.createElement("div");
         let squareHeightAndWidth = 600 / Number(gridSize.value);
 
-        grids.style.backgroundColor = '#333333';
+        //grids.style.backgroundColor = '#333333';
         grids.style.height = squareHeightAndWidth + 'px'
         grids.style.width = squareHeightAndWidth + 'px'
 
         container.appendChild(grids);
+        grids.addEventListener('mouseover', function(e) {
+            grids.style.backgroundColor = '#333333';
+        })
 
     }
 }
