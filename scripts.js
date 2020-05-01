@@ -21,8 +21,10 @@ function createGrid(rows, cols) {
         container.appendChild(grids);
         grids.addEventListener('mouseover', function(e) {
             grids.style.backgroundColor = '#333333';
-        })
-
+        });
+        grids.addEventListener('click', function(e) {
+            grids.style.backgroundColor = 'white';
+        });
     }
 }
 // createGrid(10, 10);
@@ -39,6 +41,15 @@ function resetGrid() {
     let oldGrid = document.querySelector('.container');
     oldGrid.innerHTML = "";
 }
+
+// function checkMouseAction(x) {
+//     if (x.matches) {
+//         mouseAction = 'click'
+//     } else {
+//         mouseAction = 'mouseover'
+//     }
+// }
+
 
 // button events listeners
 resizeBtn.addEventListener('click', resizeGrid);
