@@ -6,6 +6,7 @@ const resizeBtn = document.querySelector('.button');
 
 let blackBtn = document.querySelector('#black');
 let randomBtn = document.querySelector('#random');
+let grayBtn = document.querySelector('#gray');
 
 createGrid(16, 16);
 
@@ -54,29 +55,31 @@ function blackColor() {
             gridItem.style.backgroundColor = '#000';
         });
     });
-    console.log(grids)
 }
 
 function randomColor() {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    let baseColor = '#' + randomColor;
     grids = document.querySelectorAll('.gridItem');
-
-
     grids.forEach((gridItem) => {
         gridItem.addEventListener('mouseover', function(e) {
+            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            let baseColor = '#' + randomColor;
             gridItem.style.backgroundColor = baseColor;
         });
     });
-
-    //console.log(baseColor);
 }
+// function grayColor(){
+//     grids = document.querySelectorAll('.gridItem');
+//     grids.forEach((gridItem) => {
 
-function changeColor() {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    let baseColor = '#' + randomColor;
-    x = baseColor;
-}
+//     });
+// }
+
+
+// function changeColor() {
+//     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+//     let baseColor = '#' + randomColor;
+//     return baseColor;
+// }
 
 
 // button events listeners
