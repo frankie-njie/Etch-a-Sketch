@@ -19,6 +19,10 @@ body {
     /* background-color: #364f6b; */
 }
 
+header {
+    display: flex;
+}
+
 .container {
     /* background-color: #ffffff; */
     display: grid;
@@ -32,9 +36,9 @@ body {
     border: 1px solid;
 }
 
-.grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
+.gridItem {
+    /* padding: 1em;
+    border: 1px solid #ddd; */
     text-align: center;
 }
 
@@ -44,12 +48,17 @@ div.gridItem {
 
 input {
     height: 35px;
-    width: 120px;
+    width: 100px;
     font-size: 16px;
 }
 
 button {
+    /* display: inline; */
     height: 35px;
     width: 80px;
     font-size: 18px;
+}
+
+.colors {
+    margin-left: 20%;
 }

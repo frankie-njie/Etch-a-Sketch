@@ -4,6 +4,10 @@ const gridRow = document.querySelector('.gridRow');
 const gridCol = document.querySelector('.gridCol');
 const resizeBtn = document.querySelector('.button');
 
+let blackBtn = document.querySelector('#black');
+let randomBtn = document.querySelector('#random');
+
+createGrid(16, 16);
 
 // Create Grid 
 function createGrid(rows, cols) {
@@ -12,6 +16,7 @@ function createGrid(rows, cols) {
     container.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let grids = document.createElement("div");
+        grids.classList.add('gridItem')
         let squareHeightAndWidth = 600 / Number(gridSize.value);
 
         //grids.style.backgroundColor = '#333333';
@@ -27,7 +32,6 @@ function createGrid(rows, cols) {
         });
     }
 }
-// createGrid(10, 10);
 
 function resizeGrid() {
     let newGridRow = document.querySelector('.gridRow').value;
@@ -42,14 +46,40 @@ function resetGrid() {
     oldGrid.innerHTML = "";
 }
 
-// function checkMouseAction(x) {
-//     if (x.matches) {
-//         mouseAction = 'click'
-//     } else {
-//         mouseAction = 'mouseover'
-//     }
-// }
+//Change colors
+function blackColor() {
+    grids = document.querySelectorAll('.gridItem');
+    grids.forEach((gridItem) => {
+        gridItem.addEventListener('mouseover', function(e) {
+            gridItem.style.backgroundColor = '#000';
+        });
+    });
+    console.log(grids)
+}
+
+function randomColor() {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let baseColor = '#' + randomColor;
+    grids = document.querySelectorAll('.gridItem');
+
+
+    grids.forEach((gridItem) => {
+        gridItem.addEventListener('mouseover', function(e) {
+            gridItem.style.backgroundColor = baseColor;
+        });
+    });
+
+    //console.log(baseColor);
+}
+
+function changeColor() {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let baseColor = '#' + randomColor;
+    x = baseColor;
+}
 
 
 // button events listeners
 resizeBtn.addEventListener('click', resizeGrid);
+blackBtn.addEventListener('click', blackColor);
+randomBtn.addEventListener('click', randomColor);
