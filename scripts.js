@@ -18,9 +18,8 @@ function createGrid(rows, cols) {
     for (let i = 0; i < (rows * cols); i++) {
         let grids = document.createElement("div");
         grids.classList.add('gridItem')
-        let squareHeightAndWidth = 600 / Number(gridSize.value);
+        let squareHeightAndWidth = 480 / Number(gridSize.value);
 
-        //grids.style.backgroundColor = '#333333';
         grids.style.height = squareHeightAndWidth + 'px'
         grids.style.width = squareHeightAndWidth + 'px'
 
@@ -67,22 +66,23 @@ function randomColor() {
         });
     });
 }
-// function grayColor(){
-//     grids = document.querySelectorAll('.gridItem');
-//     grids.forEach((gridItem) => {
 
-//     });
-// }
+function grayColor() {
+    grids = document.querySelectorAll('.gridItem');
 
 
-// function changeColor() {
-//     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-//     let baseColor = '#' + randomColor;
-//     return baseColor;
-// }
-
+    grids.forEach((gridItem) => {
+        gridItem.addEventListener('mouseover', function(e) {
+            let opacity = Number(gridItem.style.opacity);
+            gridItem.style.opacity = opacity += 0.1;
+            gridItem.style.backgroundColor = '#000';
+            gridItem.style.transition = 'background-color 0.25s';
+        });
+    });
+}
 
 // button events listeners
 resizeBtn.addEventListener('click', resizeGrid);
 blackBtn.addEventListener('click', blackColor);
 randomBtn.addEventListener('click', randomColor);
+grayBtn.addEventListener('click', grayColor);

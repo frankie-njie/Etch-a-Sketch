@@ -16,24 +16,40 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    /* background-color: #364f6b; */
+    background-color: #07617d;
+}
+
+h2 {
+    margin-top: 2%;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(236, 236, 236);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h4 {
+    text-align: center;
+    font-size: medium;
+    color: rgb(218, 218, 218);
 }
 
 header {
     display: flex;
+    justify-content: center;
 }
 
 .container {
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
     display: grid;
     /* grid-gap: 0.1em; */
+    align-self: center;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    height: 600px;
-    width: 600px;
-    margin: 5% 15%;
+    height: 480px;
+    width: 480px;
+    margin: 5% auto;
     overflow: hidden;
-    border: 1px solid;
+    border: 8px solid rgb(144, 144, 144);
 }
 
 .gridItem {
@@ -48,7 +64,7 @@ div.gridItem {
 
 input {
     height: 35px;
-    width: 100px;
+    width: 80px;
     font-size: 16px;
 }
 
@@ -57,8 +73,43 @@ button {
     height: 35px;
     width: 80px;
     font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: ;
+}
+
+button :active {
+    border-color: none;
 }
 
 .colors {
     margin-left: 20%;
+}
+
+#resize {
+    background-color: #f9a828;
+    border: none;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+#black {
+    background-color: #141414;
+    border: none;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+#random {
+    background-color: #d25959;
+    border: none;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+#gray {
+    background-color: #eeeeee;
+    border: none;
+    font-size: 14px;
+    color: rgb(22, 22, 22);
 }
